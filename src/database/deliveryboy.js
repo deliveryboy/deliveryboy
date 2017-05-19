@@ -6,6 +6,7 @@ const insertdeliveryboy = (name,mobile,location,identification, cb)=>{
     if(poolError){
       return cb(poolError);
     }
+
     pool.query(sqlQuery,[name,mobile,location,identification],(err,result)=>{
       done(err);
       return err

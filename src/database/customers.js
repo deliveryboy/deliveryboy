@@ -16,7 +16,7 @@ const insertcustomers = (firstName, lastName,email,address,mobile,location, cb)=
 };
 
 const selectcustomersByName = (name,cb)=>{
-  const sqlQuery = 'SELECT * FROM customers where name = $1';
+  const sqlQuery = 'SELECT * FROM customers where first_name = $1';
   pool.connect((poolError,client, done) => {
     if(poolError){
       return cb(poolError);
