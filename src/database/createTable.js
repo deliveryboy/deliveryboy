@@ -45,6 +45,7 @@ module.exports = (cb) => {
         client.query(`CREATE TABLE IF NOT EXISTS "delivery_person" (
         	"id" serial NOT NULL,
         	"name" varchar(50) NOT NULL,
+          "username" varchar(50) NOT NULL UNIQUE,
         	"mobile" varchar(10) NOT NULL UNIQUE,
         	"location" TEXT NOT NULL,
         	"identification" varchar(20) NOT NULL,
