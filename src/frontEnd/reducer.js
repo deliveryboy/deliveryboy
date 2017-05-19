@@ -27,7 +27,7 @@ const restaurants = (state = [],action)=>{
 
 const currentRestaurant = (state = {},action)=>{
   switch (action.payload) {
-  case 'GET_RESTAURANT':
+  case 'UPDATE_RESTAURANTPROFILE':
     return action.payload;
   default:
     return state;
