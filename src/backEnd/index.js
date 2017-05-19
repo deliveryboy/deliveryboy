@@ -2,7 +2,9 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 const PORT = process.env.PORT || 8080;
+const routes = require('./routes.js');
 
+app.use(routes);
 app.use(express.static('public'));
 app.use(bodyParser.json());
 
