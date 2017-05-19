@@ -1,28 +1,23 @@
 import React from 'react';
-import {Button, FormControl, FormGroup, Form, Col} from 'react-bootstrap';
+import PropTypes from 'prop-types';
 
 const Login = ({onClick}) => {
   return (
     <div className="container">
       <div className='row'>
-        <Form horizontal>
-          <FormGroup>
-            <Col sm={10}>
-              <FormControl type="text" placeholder="إسم المستخدم" required/>
-            </Col>
-            <Col sm={2}>
-              إسم المستخدم
-            </Col>
-          </FormGroup>
-          <Button type="submit" onClick={() => {
-            onClick('');
-          }}>
-            تأكيد
-          </Button>
-        </Form>
+        <div className="log-in-group">
+          <input type="text" className="form-control" placeholder="إسم المستخدم" aria-describedby="basic-addon1" autoFocus/>
+          <button className="btn btn-primary" type="submit" onClick={() => {
+            onClick('DELIVERY_MAN');
+          }}>تسجيل الدخول</button>
+        </div>
       </div>
     </div>
   );
+};
+
+Login.propType = {
+  onClick: PropTypes.func
 };
 
 export default Login;
