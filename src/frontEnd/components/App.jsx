@@ -30,7 +30,7 @@ class App extends React.Component {
     case 'DELIVERY_MAN':
       return <DeliveryMan />;
     default:
-      return <Login />;
+      return <DeliveryMan />;
     }
   }
 }

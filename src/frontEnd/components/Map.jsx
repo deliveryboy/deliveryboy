@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 import getLocation from '../mapUtils.js';
 
-const DeliveryIcon = ({ text }) => <div><img src='/img/marker.webp' style={{width:'20px', height:'30px'}} /></div>;
-const RestaurantIcon = ({ text }) => <div><img src='/img/rest.png' style={{width:'20px', height:'30px'}} /></div>;
+const DeliveryIcon = () => <div><img src='/img/marker.webp' style={{width:'20px', height:'30px'}} /></div>;
+const RestaurantIcon = () => <div><img src='/img/rest.png' style={{width:'20px', height:'30px'}} /></div>;
+const CustomerIcon = () => <div><img src='/img/customer.png' style={{width:'20px', height:'30px'}} /></div>;
 
 class Map extends Component {
   constructor(props){
@@ -12,7 +13,6 @@ class Map extends Component {
   }
   componentDidMount(){
     getLocation((location) =>{
-      console.log(location);
       this.setState({location : location});
     });
   }
@@ -25,12 +25,14 @@ class Map extends Component {
         <DeliveryIcon
           lat={31.512688099999995}
           lng={34.4451603}
-          text={'Kreyser Avrora'}
         />
         <RestaurantIcon
           lat={31.5182062}
           lng={34.4451603}
-          text={'Kreyser Avrora'}
+        />
+      <CustomerIcon
+          lat={31.518206212312}
+          lng={34.4451603}
         />
       </GoogleMapReact></div>
     );
