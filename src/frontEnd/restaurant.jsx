@@ -8,7 +8,7 @@ const Main = () => {
   return(
   <Provider store={store}>
     <div>
-      <App/>
+    
     </div>
   </Provider>
   );
