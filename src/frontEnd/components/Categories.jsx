@@ -1,20 +1,27 @@
 import React from 'react';
 import Resturants from './Resturant.jsx';
 import Meals from './Meals.jsx';
+import PropTypes from 'prop-types';
 
-const Search = () => {
+
+const Search = ({restaurants,meals}) => {
   return (
     <section className='row'>
       <div className="col-md-6">
         <h4>المطاعم</h4>
-        <Resturants />
+        <Resturants restaurants={restaurants}/>
       </div>
       <div className="col-md-6">
         <h4>الوجبات</h4>
-        <Meals />
+        <Meals meals={meals} />
       </div>
     </section>
   );
 };
+
+Search.propType = {
+  meals:PropTypes.array,
+  restaurants:PropTypes.array
+}
 
 export default Search;

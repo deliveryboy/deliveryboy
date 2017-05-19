@@ -5,17 +5,15 @@ const ChangeCurrentView = (currentView) => {
 };
 
 const getUser = (user) => {
-  fetchWrapper('/' + user).then((result) => {
+  fetchWrapper('/customers/' + user).then((result) => {
     if (result != null) {
-
       store.dispatch({type: 'UPDATE_PROFILE', payload: result});
     }
-
   });
 
 };
 const getDelivery = (user)=>{
-  fetchWrapper('/'+user)
+  fetchWrapper('/deliveryboy/'+user)
   .then((result)=>{
     if(result!=null){
       store.dispatch({type:'UPDATE_DELIVERYPROFILE',payload:result});
@@ -32,6 +30,24 @@ const getRestaurant = (restaurant)=>{
     }
   });
 };
+
+const getRestaurants = (restaurant)=>{
+  fetchWrapper('/restaurants'+restaurant)
+  .then((result)=>{
+    if(result!=null){
+      store.dispatch({type:'GET_RESTAURANTS',payload:result});
+    }
+  });
+};
+
+const getMeals = ()=>{
+  fetchWrapper('/meals')
+  .then((result)=>{
+    if(result!=null){
+      store.dispatch({type:'GET_MEALS',payload:result});
+    }
+  });
+}
 
 
 const getDeliveryOrders = (id)=>{
@@ -53,13 +69,6 @@ const getRestaurantOrders = (id)=>{
 };
 
 
-
-
-
-
-
-
-
 const fetchWrapper = (url, method, body) => {
   return fetch(url, {
     method: method || 'GET',
@@ -79,4 +88,4 @@ const fetchWrapper = (url, method, body) => {
 
 };
 
-export {ChangeCurrentView,getUser,getDelivery,getRestaurant,getDeliveryOrders,getRestaurantOrders};
+export {ChangeCurrentView,getUser,getDelivery,getRestaurant,getDeliveryOrders,getRestaurantOrders,getMeals,getRestaurants};

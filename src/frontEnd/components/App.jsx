@@ -1,20 +1,40 @@
 import React from 'react';
 import FirstFace from './FirstFace.jsx';
 import MapContainer from './containers/MapContainer.jsx';
+import PropTypes from 'prop-types';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
+
+
+  }
+
+  componentWillMount(){
+   this.props.getRestaurants();
+   this.props.getMeals();
+
   }
 
   render(){
-    switch (this.props.currentView) {
-    case 'Map':
+    const {meals,currentView,restaurants} = this.props;
+    switch (currentView) {
+    case 'MAP':
       return <MapContainer />;
+    case 'FirstFace':
+      return <FirstFace meals={meals} restaurants={restaurants}/>
     default:
       return <FirstFace />;
     }
   }
+}
+
+App.propType = {
+  meals:PropTypes.array,
+  restaurants:PropTypes.array,
+  getRestaurants:PropTypes.func,
+  getMeals:PropTypes.func,
+  currentView:PropTypes.string
 }
 
 export default App;
