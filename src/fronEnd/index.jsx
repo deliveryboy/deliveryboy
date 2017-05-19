@@ -13,6 +13,5 @@ const Main = () => {
   </Provider>
   );
 };
-
 reactDOM.render(
   <Main />, document.getElementById('myApp'));
