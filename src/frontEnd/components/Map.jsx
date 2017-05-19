@@ -50,12 +50,14 @@ class Map extends React.Component {
 
   render() {
     const style = {
-      width: '1000px',
-      height: '1000px'
+      width: '80%',
+      height: '500px',
+      margin: '0 auto',
+      marginTop: '20px'
     };
     return(
-      <div ref='map' style ={style}>
-        Loading map...
+      <div ref='map'  style ={style}>
+        تحميل الخريطة ...
       </div>
     );
   }
