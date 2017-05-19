@@ -1,7 +1,8 @@
 import React from 'react';
 import FirstFace from './FirstFace.jsx';
 import MapContainer from './containers/MapContainer.jsx';
-import DeliveryMan from './DeliveryMan.jsx'
+import Login from './Login.jsx';
+import DeliveryMan from './DeliveryMan.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -14,8 +15,10 @@ class App extends React.Component {
       return <MapContainer />;
     case 'FIRST_FACE':
       return <FirstFace />;
-    default:
+    case 'DELIVERY_MAN':
       return <DeliveryMan />;
+    default:
+      return <Login />;
     }
   }
 }
