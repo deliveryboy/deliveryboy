@@ -47,7 +47,7 @@ const currentMeal = (state={}, action) => {
   }
 };
 
-const markers = (state={}, action) => {
+const markers = (state={Delivery: {lat:31.512645,lng:34.445147299999995}}, action) => {
   switch (action.type) {
   case 'SET_MARKERS':
     return action.payload;

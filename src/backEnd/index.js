@@ -7,6 +7,5 @@ app.use(express.static('public'));
 app.use(bodyParser.json());
 
 app.listen(PORT, () => {
-  // eslint-disable-next-line no-console
-  console.log('Our app is running on http://localhost:' + PORT);
+  console.log('Our app is running on http://localhost:' + PORT);   // eslint-disable-line no-console
 });
