@@ -47,4 +47,13 @@ const currentMeal = (state={}, action) => {
   }
 };
 
-export {allRestaurantsReducer,currentRestaurantReducer,selectedRestaurantMeals,customerProfile,allMealsReducer,currentMeal};
+const markers = (state={}, action) => {
+  switch (action.type) {
+  case 'SET_MARKERS':
+    return action.payload;
+  default:
+    return state;
+  }
+};
+
+export {allRestaurantsReducer,currentRestaurantReducer,selectedRestaurantMeals,customerProfile,allMealsReducer,currentMeal,markers};
