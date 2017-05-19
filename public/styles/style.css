@@ -1,0 +1,114 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #EEEEEE;
+  color: #1C2021
+}
+
+hr {
+  margin: 5vh auto;
+  border: 0;
+  height: 1px;
+  background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+}
+
+.navbar-default {
+  background-color: #353C3E;
+  border: 0;
+  border-radius: 0;
+}
+
+.navbar-default .navbar-link {
+  color: #ddd;
+}
+
+.navbar-default .navbar-link:hover {
+  cursor: pointer;
+  text-decoration: none;
+  color: #fff;
+}
+
+.search-input-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 5%;
+  width: 70%;
+}
+
+.search-input-btn .input-group-addon:first-child {
+  border-left: 0;
+  border-right: 1px solid #ccc;
+}
+
+.search-input-btn .input-group-addon:first-child {
+  background-color: #1C2021;
+  color: #EEEEEE;
+  border: none;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.search-input-btn .input-group .form-control:last-child {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+.search-input-btn .input-group {
+  margin-bottom: 20px;
+}
+
+.search-input-btn .btn-default {
+  height: 50px;
+  background-color: #1C2021;
+  color: #EEEEEE;
+  border: none;
+  box-shadow: none;
+}
+
+.search-input-btn .btn-default:hover {
+  color: #1C2021;
+  background-color: #aaa;
+  border: none;
+  box-shadow: none;
+}
+
+.search-input-btn .form-control {
+  height: 50px;
+  border: none;
+  box-shadow: none;
+  font-size: 18px;
+}
+.search-input-btn .form-control:focus {
+  box-shadow: none;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 4px;
+  margin-top: 15px;
+  color: #1C2021;
+}
+.card:hover{
+  cursor: pointer;
+}
+.card img{
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.card .card-block{
+  padding: 10px 15px;
+}
