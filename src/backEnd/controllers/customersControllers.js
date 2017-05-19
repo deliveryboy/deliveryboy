@@ -1,14 +1,15 @@
 const customersdb = require('../../database/customers.js');
-
+const path = require('path');
 module.exports = {
   getCustomers: (req, res) => {
-    customersdb.selectcustomersByName('shahenaz',(err,result)=>{
+    customersdb.selectcustomersByName('Shahenaz',(err,result)=>{
       if (err) {
           res.status(500).end();
         }
         else {
           console.log(result);
-          res.json(result);
+          //res.json(result);
+          res.sendFile(path.join(__dirname+'/../../../public/user.html'));
         }
     });
   }
