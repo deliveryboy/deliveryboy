@@ -1,6 +1,6 @@
 import React from 'react';
 import MapView from './Map.jsx';
-import Nav from './containers/Navbar.js';
+import FirstFace from './FirstFace.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -12,7 +12,7 @@ class App extends React.Component {
     case 'Map':
       return <MapView />;
     default:
-      return <Nav />;
+      return <FirstFace />;
     }
   }
 }
