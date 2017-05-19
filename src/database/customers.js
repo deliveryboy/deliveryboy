@@ -15,13 +15,13 @@ const insertcustomers = (firstName, lastName,email,address,mobile,location, cb)=
   });
 };
 
-const selectcustomersByName = (name,cb)=>{
+const selectcustomersByName = (data,cb)=>{
   const sqlQuery = 'SELECT * FROM customers where first_name = $1';
   pool.connect((poolError,client, done) => {
     if(poolError){
       return cb(poolError);
     }
-    pool.query(sqlQuery,[name],(err,result)=>{
+    pool.query(sqlQuery,[data.name],(err,result)=>{
       const response = result.rowCount > 0
         ? result.rows[0]
         : null;

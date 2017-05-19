@@ -44,7 +44,7 @@ const deliverboyList = (state={},action)=>{
   }
 };
 
-const deliverboy = (state={},action)=>{
+const currentDeliverboy = (state={},action)=>{
   switch (action.payload) {
   case 'UPDATE_DELIVERYPROFILE':
     return action.payload;
@@ -78,4 +78,4 @@ const ordersList = (state = [],action)=>{
 
 
 
-export {currentView,currentUser,restaurants,currentRestaurant,deliverboyList,deliverboy,meals,ordersList};
+export {currentView,currentUser,restaurants,currentRestaurant,deliverboyList,currentDeliverboy,meals,ordersList};

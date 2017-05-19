@@ -6,6 +6,7 @@ const insertdeliveryboy = (name,mobile,location,identification, cb)=>{
     if(poolError){
       return cb(poolError);
     }
+
     pool.query(sqlQuery,[name,mobile,location,identification],(err,result)=>{
       done(err);
       return err
@@ -32,13 +33,13 @@ const selectdeliveryboyBylocation = (location,cb)=>{
     });
   });
 };
-const selectdeliveryboyByname = (location,cb)=>{
-  const sqlQuery = 'SELECT * FROM delivery_person WHERE name =$1';
+const selectdeliveryboyByusername = (data,cb)=>{
+  const sqlQuery = 'SELECT * FROM delivery_person WHERE username =$1';
   pool.connect((poolError,client, done) => {
     if(poolError){
       return cb(poolError);
     }
-    pool.query(sqlQuery,[location],(err,result)=>{
+    pool.query(sqlQuery,[data.name],(err,result)=>{
       const response = result.rowCount > 0
         ? result.rows[0]
         : null;
@@ -52,6 +53,6 @@ const selectdeliveryboyByname = (location,cb)=>{
 
 module.exports ={
   insertdeliveryboy:insertdeliveryboy,
-  selectdeliveryboyByname:selectdeliveryboyByname,
+  selectdeliveryboyByusername:selectdeliveryboyByusername,
   selectdeliveryboyBylocation:selectdeliveryboyBylocation
 };
