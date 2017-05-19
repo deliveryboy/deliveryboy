@@ -1,13 +1,15 @@
 module.exports = {
+
     "env": {
         "browser": true,
         "commonjs": true,
+        "node": true,
+        "jest": true,
         "es6": true
-    },
-    "extends": "eslint:recommended",
+  },
+    "extends": ["eslint:recommended", "plugin:react/recommended"],
     "parserOptions": {
         "ecmaFeatures": {
-            "experimentalObjectRestSpread": true,
             "jsx": true
         },
         "sourceType": "module"
@@ -32,5 +34,8 @@ module.exports = {
             "error",
             "always"
         ]
+    },
+    "globals": {
+      gapi: true
     }
-};
+}

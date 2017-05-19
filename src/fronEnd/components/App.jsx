@@ -1,6 +1,6 @@
 import React from 'react';
-import MapView from './Map.jsx';
 import Nav from './containers/Navbar.js';
+import MapContainer from './containers/MapContainer.js';
 
 class App extends React.Component {
   constructor(props) {
@@ -10,7 +10,7 @@ class App extends React.Component {
   render(){
     switch (this.props.currentView) {
     case 'Map':
-      return <MapView />;
+      return <MapContainer />;
     default:
       return <Nav />;
     }
