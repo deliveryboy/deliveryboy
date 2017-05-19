@@ -1,6 +1,10 @@
 const customersdb = require('../../database/customers.js');
 const path = require('path');
 module.exports = {
+  getHomePage:(req,res)=>{
+    res.sendFile(path.join(__dirname+'/../../../public/user.html'));
+
+  },
   getCustomers: (req, res) => {
     customersdb.selectcustomersByName('Shahenaz',(err,result)=>{
       if (err) {
@@ -8,8 +12,7 @@ module.exports = {
         }
         else {
           console.log(result);
-          //res.json(result);
-          res.sendFile(path.join(__dirname+'/../../../public/user.html'));
+          res.json(result);
         }
     });
   }
