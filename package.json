@@ -7,6 +7,8 @@
     "start": "node ./src/backEnd/index.js",
     "watch:client": "webpack --watch",
     "watch:server": "NODE_ENV=development nodemon -x 'npm start'",
+    "db:create": "psql -c 'CREATE DATABASE deliveryboy;' -U postgres -h localhost",
+    "db:drop": "psql -c 'DROP DATABASE IF EXISTS deliveryboy;' -U postgres -h localhost",
     "build": "webpack"
   },
   "repository": {
@@ -28,6 +30,7 @@
     "express": "^4.15.2",
     "google-maps-react": "^1.0.19",
     "prop-types": "^15.5.10",
+    "pg": "^6.2.2",
     "react": "^15.5.4",
     "react-bootstrap": "^0.31.0",
     "react-dom": "^15.5.4",
