@@ -1,5 +1,5 @@
 const router = require('express').Router();
-
+const customersControllers = require('./controllers/customersControllers.js');
 module.exports = router
-.get('/')
+.get('/', customersControllers.getCustomers)
 .get('/resturant');

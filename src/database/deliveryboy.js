@@ -1,7 +1,7 @@
 const pool = require('./pool.js');
 
 const insertdeliveryboy = (name,mobile,location,identification, cb)=>{
-  const sqlQuery = 'INSERT INTO deliveryboy(name,mobile,location,identification)VALUES($1,$2,$3,$4) RETURNING *';
+  const sqlQuery = 'INSERT INTO delivery_person(name,mobile,location,identification)VALUES($1,$2,$3,$4) RETURNING *';
   pool.connect((poolError,client, done) => {
     if(poolError){
       return cb(poolError);
@@ -16,7 +16,7 @@ const insertdeliveryboy = (name,mobile,location,identification, cb)=>{
 };
 
 const selectdeliveryboyBylocation = (location,cb)=>{
-  const sqlQuery = 'SELECT * FROM deliveryboy WHERE location =$1';
+  const sqlQuery = 'SELECT * FROM delivery_person WHERE location =$1';
   pool.connect((poolError,client, done) => {
     if(poolError){
       return cb(poolError);
@@ -33,7 +33,7 @@ const selectdeliveryboyBylocation = (location,cb)=>{
   });
 };
 const selectdeliveryboyByname = (location,cb)=>{
-  const sqlQuery = 'SELECT * FROM deliveryboy WHERE name =$1';
+  const sqlQuery = 'SELECT * FROM delivery_person WHERE name =$1';
   pool.connect((poolError,client, done) => {
     if(poolError){
       return cb(poolError);
