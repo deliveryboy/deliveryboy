@@ -14,7 +14,7 @@ module.exports = (cb) => {
         )`,callback);
       },
       (callback) => {
-        client.query(`CREATE TABLE IF NOT EXISTS resturants (
+        client.query(`CREATE TABLE IF NOT EXISTS restaurants (
            id SERIAL PRIMARY KEY,
         )`,callback);
       },
