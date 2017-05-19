@@ -21,7 +21,7 @@ const selectcustomersByName = (name,cb)=>{
     if(poolError){
       return cb(poolError);
     }
-    pool.query(sqlQuery,(err,result)=>{
+    pool.query(sqlQuery,[name],(err,result)=>{
       const response = result.rowCount > 0
         ? result.rows[0]
         : null;
