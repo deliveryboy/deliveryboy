@@ -6,7 +6,8 @@ module.exports = {
 
   },
   getCustomers: (req, res) => {
-    customersdb.selectcustomersByName('Shahenaz',(err,result)=>{
+    customersdb.selectcustomersByName(req.params,(err,result)=>{
+      console.log(req.params);
       if (err) {
           res.status(500).end();
         }
