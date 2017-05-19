@@ -12,6 +12,12 @@ const NavView = () => {
       </Navbar.Header>
       <Navbar.Collapse>
         <Navbar.Text pullRight>
+          <Navbar.Link><Glyphicon glyph="log-in" /> تسجيل الدخول </Navbar.Link>
+        </Navbar.Text>
+        <Navbar.Text pullRight>
+          |
+        </Navbar.Text>
+        <Navbar.Text pullRight>
           <Navbar.Link><Glyphicon glyph="shopping-cart" /> سلة المشتريات </Navbar.Link>
         </Navbar.Text>
       </Navbar.Collapse>
