@@ -3,9 +3,9 @@ import {currentView} from './reducer.js';
 
 const allReducers = combineReducers(
   {
-    currentView:currentView});
-
-
+    currentView:currentView
+  }
+);
 
 const store = createStore(allReducers);
 

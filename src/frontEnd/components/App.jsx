@@ -1,5 +1,5 @@
 import React from 'react';
-import Nav from './containers/Navbar.js';
+import FirstFace from './FirstFace.jsx';
 import MapContainer from './containers/MapContainer.jsx';
 
 class App extends React.Component {
@@ -12,7 +12,7 @@ class App extends React.Component {
     case 'Map':
       return <MapContainer />;
     default:
-      return <Nav />;
+      return <FirstFace />;
     }
   }
 }
