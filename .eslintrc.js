@@ -3,6 +3,8 @@ module.exports = {
         "browser": true,
         "commonjs": true,
         "es6": true
+    },"globals": {
+        "process": true
     },
     "extends": "eslint:recommended",
     "parserOptions": {
