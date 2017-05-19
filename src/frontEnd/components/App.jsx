@@ -1,6 +1,7 @@
 import React from 'react';
 import FirstFace from './FirstFace.jsx';
 import MapContainer from './containers/MapContainer.jsx';
+import DeliveryMan from './DeliveryMan.jsx'
 
 class App extends React.Component {
   constructor(props) {
@@ -9,10 +10,12 @@ class App extends React.Component {
 
   render(){
     switch (this.props.currentView) {
-    case 'Map':
+    case 'MAP':
       return <MapContainer />;
-    default:
+    case 'FIRST_FACE':
       return <FirstFace />;
+    default:
+      return <DeliveryMan />;
     }
   }
 }
