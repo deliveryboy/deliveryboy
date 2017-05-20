@@ -33,13 +33,30 @@ const selectdeliveryboyBylocation = (location,cb)=>{
     });
   });
 };
+const getdeliveryboylocation = (cb)=>{
+  const sqlQuery = 'SELECT username,location_lng,location_lat FROM delivery_person';
+  pool.connect((poolError,client, done) => {
+    if(poolError){
+      return cb(poolError);
+    }
+    pool.query(sqlQuery,(err,result)=>{
+      const response = result.rowCount > 0
+        ? result.rows
+        : null;
+      done(err);
+      return err
+        ? cb(err)
+        : cb(null, response);
+    });
+  });
+};
 const selectdeliveryboyByusername = (data,cb)=>{
   const sqlQuery = 'SELECT * FROM delivery_person WHERE username =$1';
   pool.connect((poolError,client, done) => {
     if(poolError){
       return cb(poolError);
     }
-    pool.query(sqlQuery,[data.name],(err,result)=>{
+    pool.query(sqlQuery,[data.username],(err,result)=>{
       const response = result.rowCount > 0
         ? result.rows[0]
         : null;
@@ -52,7 +69,7 @@ const selectdeliveryboyByusername = (data,cb)=>{
 };
 const updateLocationById = (data,cb)=>{
   const sqlQuery = 'UPDATE delivery_person SET location=$1 WHERE id =$2 RETURNING location';
-  console.log(sqlQuery);
+  //console.log(sqlQuery);
   pool.connect((poolError,client, done) => {
     if(poolError){
       return cb(poolError);
@@ -73,5 +90,7 @@ module.exports ={
   insertdeliveryboy:insertdeliveryboy,
   selectdeliveryboyByusername:selectdeliveryboyByusername,
   selectdeliveryboyBylocation:selectdeliveryboyBylocation,
-  updateLocationById:updateLocationById
+  updateLocationById:updateLocationById,
+  getdeliveryboylocation:getdeliveryboylocation
+
 };

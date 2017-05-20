@@ -15,13 +15,13 @@ const insertmeal = (name,img,price,amount,cook_time, cb)=>{
   });
 };
 
-const selectmeal = (name,cb)=>{
-  const sqlQuery = 'SELECT * FROM meals where name =$1';
+const selectmeal = (cb)=>{
+  const sqlQuery = 'SELECT * FROM meals';
   pool.connect((poolError,client, done) => {
     if(poolError){
       return cb(poolError);
     }
-    pool.query(sqlQuery,(err,[name],result)=>{
+    pool.query(sqlQuery,(err,result)=>{
       const response = result.rowCount > 0
         ? result.rows[0]
         : null;

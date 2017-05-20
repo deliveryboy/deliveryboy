@@ -32,9 +32,46 @@ const selectrestaurantByName = (name,cb)=>{
     });
   });
 };
+const getAllRestaurant =(cb)=>{
 
+  const sqlQuery = 'SELECT * FROM restaurants';
+  pool.connect((poolError,client, done) => {
+    if(poolError){
+      return cb(poolError);
+    }
+    pool.query(sqlQuery,(err,result)=>{
+      const response = result.rowCount > 0
+        ? result.rows[0]
+        : null;
+      done(err);
+      return err
+        ? cb(err)
+        : cb(null, response);
+    });
+  });
+};
+
+const selectrestaurantByID = (id,cb)=>{
+  const sqlQuery = 'SELECT * FROM restaurants where id =$1';
+  pool.connect((poolError,client, done) => {
+    if(poolError){
+      return cb(poolError);
+    }
+    pool.query(sqlQuery,[id],(err,result)=>{
+      const response = result.rowCount > 0
+        ? result.rows[0]
+        : null;
+      done(err);
+      return err
+        ? cb(err)
+        : cb(null, response);
+    });
+  });
+};
 
 module.exports ={
   insertrestaurant:insertrestaurant,
-  selectrestaurantByName:selectrestaurantByName
+  selectrestaurantByName:selectrestaurantByName,
+  getAllRestaurant:getAllRestaurant,
+  selectrestaurantByID:selectrestaurantByID
 };
