@@ -1,5 +1,5 @@
 import React from 'react';
-import Resturants from './Resturant.jsx';
+import Resturants from './Restaurant.jsx';
 import Meals from './Meals.jsx';
 import PropTypes from 'prop-types';
 
