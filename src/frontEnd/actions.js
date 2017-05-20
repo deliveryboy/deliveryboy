@@ -58,9 +58,20 @@ const confirmDeliveryOrder = ()=>{
 }
 
 
-const order = (order)=>{
-  //TODO
-}
+const submitOrder = (order)=>{
+  fetchWrapper('/order','POST',order)
+  .then(res=>{
+    if(res!=null){
+      //TODO send sms to the person who orders to resturant also
+    }
+  });
+};
+
+const selectMeal = (meal)=>{
+  console.log('Meal is Ordered');
+  return {type:'SELECT_MEAL',payload:meal}
+};
+
 const getDelivery = (user)=>{
   fetchWrapper('/deliveryboys/'+user)
   .then((result)=>{
@@ -153,5 +164,7 @@ export {
   order,
   confirmDeliveryOrder,
   rejectDeliveryOrder,
-  rejectRestaurantOrder
+  rejectRestaurantOrder,
+  selectMeal,
+  submitOrder
 };
