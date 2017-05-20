@@ -1,5 +1,5 @@
 import {createStore,combineReducers} from 'redux';
-import {currentView,currentUser,restaurants,currentRestaurant,deliverboyList,currentDeliverboy,meals,ordersList} from './reducer.js';
+import {currentView,currentUser,selectedMeal,restaurants,currentRestaurant,deliverboyList,currentDeliverboy,meals,ordersList} from './reducer.js';
 
 const allReducers = combineReducers(
   {
@@ -10,7 +10,8 @@ const allReducers = combineReducers(
     ordersList:ordersList,
     meals:meals,
     deliverboyList:deliverboyList,
-    restaurants:restaurants
+    restaurants:restaurants,
+    selectedMeal:selectedMeal
 
   }
 );
