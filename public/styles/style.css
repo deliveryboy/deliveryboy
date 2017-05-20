@@ -178,14 +178,25 @@ th {
   align-items: center;
   flex-direction: column;
   margin-top: 5%;
+  width: 30%;
 }
 
 .order-form-group input {
   margin-bottom: 20px;
-  width: 40%;
 }
 
 .order-form-group button {
   width: 20%;
   font-size: 18px;
+}
+.order-form{
+  display: flex;
+  justify-content: space-around;
+}
+.map{
+  margin-top: 5%;
+  width: 100%;
+}
+.map div{
+  margin-top: 0!important;
 }

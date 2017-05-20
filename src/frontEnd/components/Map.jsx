@@ -51,7 +51,7 @@ class Map extends React.Component {
   render() {
     const style = {
       width: '80%',
-      height: '500px',
+      height: '100%',
       margin: '0 auto',
       marginTop: '20px'
     };

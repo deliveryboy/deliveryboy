@@ -34,7 +34,7 @@ class App extends React.Component {
     case 'MAP':
       return <MapContainer />;
     case 'FirstFace':
-      return <FirstFace meals={meals} restaurants={restaurants}/>
+      return <FirstFace meals={meals} restaurants={restaurants}/>;
     case 'DELIVERY_MAN':
       return <DeliveryMan />;
     case  'LOGIN':
