@@ -3,7 +3,7 @@ import FirstFace from './FirstFace.jsx';
 import MapContainer from './containers/MapContainer.jsx';
 import PropTypes from 'prop-types';
 import Login from './containers/Login.js';
-import DeliveryMan from './DeliveryMan.jsx';
+import DeliveryManPage from './DeliveryManPage.jsx';
 import ResMenu from './ResturantMenu.jsx';
 
 
@@ -31,16 +31,10 @@ class App extends React.Component {
     const {meals,currentView,restaurants} = this.props;
     console.log(currentView);
     switch (currentView) {
-    case 'MAP':
-      return <MapContainer />;
     case 'FirstFace':
       return <FirstFace meals={meals} restaurants={restaurants}/>
-    case 'DELIVERY_MAN':
-      return <DeliveryMan />;
     case  'LOGIN':
       return <Login/>
-    case 'RESTURANT_MENU':
-      return <ResMenu />;
     default:
       return <Login />;
     }
