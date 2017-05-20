@@ -73,6 +73,15 @@ const ordersList = (state = [],action)=>{
   }
 };
 
+const selectedMeal = (state = {},action)=>{
+  switch (action.payload) {
+    case 'SELECT_MEAL':
+      return action.payload
+    default:
+      return state;
+  }
+}
+
 
 
 
