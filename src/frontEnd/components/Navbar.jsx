@@ -12,7 +12,7 @@ const NavView = ({onClick}) => {
       </Navbar.Header>
       <Navbar.Collapse>
         <Navbar.Text pullRight>
-          <Navbar.Link onClick={()=>onClick('Login')}><Glyphicon glyph="log-in" /> تسجيل الدخول </Navbar.Link>
+          <Navbar.Link onClick={()=>onClick('LOGIN')}><Glyphicon glyph="log-in" /> تسجيل الدخول </Navbar.Link>
         </Navbar.Text>
         <Navbar.Text pullRight>
           |
