@@ -4,6 +4,7 @@ const restaurantsControllers = require('./controllers/restaurantsControllers.js'
 const deliveryBoyControllers = require('./controllers/deliveryBoyControllers.js');
 const mealsControllers = require('./controllers/mealsControllers.js');
 const smsControllers = require('./controllers/smsControllers.js');
+const ordersController = require('./controllers/ordersControllers.js')
 
 module.exports = router
 .get('/', customersControllers.getHomePage)
