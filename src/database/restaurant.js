@@ -52,7 +52,7 @@ const getAllRestaurant =(cb)=>{
 };
 
 const selectrestaurantByID = (id,cb)=>{
-  const sqlQuery = 'SELECT name,location FROM restaurants where id =$1';
+  const sqlQuery = 'SELECT * FROM restaurants where id =$1';
   pool.connect((poolError,client, done) => {
     if(poolError){
       return cb(poolError);
