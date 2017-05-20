@@ -1,5 +1,5 @@
 import React from 'react';
-import MapView from './Map.jsx';
+import MapView from './CustomerMap.jsx';
 
 const OrderForm = () => {
   return (
