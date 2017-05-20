@@ -15,7 +15,8 @@ module.exports = (cb) => {
         	"email" varchar(100) NOT NULL,
         	"address" varchar(255) NOT NULL,
         	"mobile" varchar(10) NOT NULL,
-        	"location" varchar(255) NOT NULL,
+        	"location_lng" varchar(255) NOT NULL,
+          "location_lat" varchar(255) NOT NULL,
         	CONSTRAINT customers_pk PRIMARY KEY ("id")
         ) `,callback);
       },
@@ -23,7 +24,8 @@ module.exports = (cb) => {
         client.query(`CREATE TABLE IF NOT EXISTS "restaurants" (
         	"id" serial NOT NULL,
         	"name" varchar(50) NOT NULL,
-        	"location" varchar(255) NOT NULL,
+        	"location_lng" varchar(255) NOT NULL,
+          "location_lat" varchar(255) NOT NULL,
         	"address" varchar(255) NOT NULL,
         	"about" TEXT,
         	CONSTRAINT restaurants_pk PRIMARY KEY ("id")
@@ -47,7 +49,8 @@ module.exports = (cb) => {
         	"name" varchar(50) NOT NULL,
           "username" varchar(50) NOT NULL UNIQUE,
         	"mobile" varchar(10) NOT NULL UNIQUE,
-        	"location" TEXT NOT NULL,
+        	"location_lng" varchar(255) NOT NULL,
+          "location_lat" varchar(255) NOT NULL,
         	"identification" varchar(20) NOT NULL,
         	CONSTRAINT delivery_person_pk PRIMARY KEY ("id")
         ) `,callback);

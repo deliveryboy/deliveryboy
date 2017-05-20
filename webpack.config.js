@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 const common= {
   entry: {
-    bundle: ['./src/fronEnd/index.jsx']
+    bundle: ['./src/frontEnd/index.jsx']
   },
   output: {
     path: __dirname + '/public/js',

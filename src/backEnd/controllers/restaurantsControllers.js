@@ -1,13 +1,12 @@
 const restaurantdb = require('../../database/restaurant.js');
 const path = require('path');
 const orderdb = require('../../database/order.js');
-
 module.exports = {
   getRestaurantsPage:(req,res)=>{
     res.sendFile(path.join(__dirname+'/../../../public/restaurant.html'));
   },
   getRestaurants: (req, res) => {
-    restaurantdb.selectrestaurantByName(req.params,(err,result)=>{
+    restaurantdb.getAllRestaurant((err,result)=>{
       if (err) {
         res.status(500).end();
       }
