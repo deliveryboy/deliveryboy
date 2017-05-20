@@ -23,7 +23,7 @@ const getUser = (user) => {
   ).then((result) => {
     if (result != null) {
       store.dispatch({type: 'UPDATE_PROFILE', payload: result});
-      store.dispatch(ChangeCurrentView('FirstFace'));
+      store.dispatch(ChangeCurrentView('FIRST_FACE'));
     }
   });
 
