@@ -1,10 +1,10 @@
 import {connect} from 'react-redux';
 import Login from '../Login.jsx';
-import {ChangeCurrentView}from '../../actions.js';
+import {getUser}from '../../actions.js';
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = () => {
   return {
-    onClick: (currentView) =>{dispatch( ChangeCurrentView(currentView));},
+    onClick: getUser
   };
 };
 

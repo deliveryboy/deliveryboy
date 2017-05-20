@@ -5,11 +5,28 @@ const ChangeCurrentView = (currentView) => {
 };
 
 const getUser = (user) => {
-  fetchWrapper('/customers/' + user).then((result) => {
+  fetch('/customers/'+user,{
+      method:'GET',
+      credentials:'include',
+      headers: {
+        'Accept': 'application/json',
+        'content-type': 'application/json'
+      }
+    }).then(res => {
+      if (res.status === 200) {
+          return res.json();
+      }
+      else{
+        return null;
+      }
+    }
+  ).then((result) => {
     if (result != null) {
       store.dispatch({type: 'UPDATE_PROFILE', payload: result});
+      store.dispatch(ChangeCurrentView('FIRST_FACE'));
     }
   });
+
 
 };
 const getDelivery = (user)=>{
@@ -31,8 +48,8 @@ const getRestaurant = (restaurant)=>{
   });
 };
 
-const getRestaurants = (restaurant)=>{
-  fetchWrapper('/restaurants'+restaurant)
+const getRestaurants = ()=>{
+  fetchWrapper('/restaurants')
   .then((result)=>{
     if(result!=null){
       store.dispatch({type:'GET_RESTAURANTS',payload:result});

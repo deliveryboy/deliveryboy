@@ -17,9 +17,11 @@ hr {
   background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
   background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
 }
+
 th {
   text-align: right;
 }
+
 .navbar-default {
   background-color: #353C3E;
   border: 0;
@@ -35,9 +37,31 @@ th {
   text-decoration: none;
   color: #fff;
 }
-.nav-tabs{
+
+.nav-tabs {
   display: flex;
 }
+
+.btn-group>.btn:first-child:not(:last-child):not(.dropdown-toggle) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.btn-group>.btn:last-child:not(:first-child) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+.btn-group-justified {
+  display: inherit;
+  width: 100%;
+  border-collapse: separate;
+}
+
 .search-input-btn {
   display: flex;
   flex-direction: column;
@@ -95,6 +119,7 @@ th {
   box-shadow: none;
   font-size: 18px;
 }
+
 .search-input-btn .form-control:focus {
   box-shadow: none;
 }
@@ -104,30 +129,98 @@ th {
   border-radius: 4px;
   margin-top: 15px;
   color: #1C2021;
-}
-.card:hover{
-  cursor: pointer;
-}
-.card img{
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
+  text-align: right;
 }
 
-.card .card-block{
+.card:hover {
+  cursor: pointer;
+}
+
+.card img {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  width: 100%;
+}
+
+.card .card-block {
   padding: 10px 15px;
 }
 
-.table-container{
+.float-card {
+  float: right;
+}
+
+.table-container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   margin-top: 20px;
 }
 
-.table-container table{
-  width: 80%;
+.table-container table {
+  width: 60%;
 }
 
-.map-container{
+.map-container {
   display: flex;
   justify-content: center;
+}
+
+.log-in-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5%;
+}
+
+.log-in-group input {
+  width: 30%;
+}
+
+.log-in-group button {
+  width: 15%;
+  margin-top: 20px;
+}
+
+.order-form-group {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 5%;
+  width: 30%;
+}
+
+.order-form-group input {
+  margin-bottom: 20px;
+}
+
+.order-form-group button {
+  width: 20%;
+  font-size: 18px;
+}
+
+.order-form {
+  display: flex;
+  justify-content: space-around;
+}
+
+.map {
+  margin-top: 5%;
+  width: 100%;
+}
+
+.map div {
+  margin-top: 0!important;
+}
+
+.left-border {
+  border-left: 1px solid #ccc;
+}
+
+@media (max-width:991px) {
+  .left-border {
+    margin-top: 20px;
+    border-top: 1px solid #ccc;
+    border-left: 0;
+  }
 }
