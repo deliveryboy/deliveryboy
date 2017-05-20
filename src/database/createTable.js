@@ -15,8 +15,7 @@ module.exports = (cb) => {
         	"email" varchar(100) NOT NULL,
         	"address" varchar(255) NOT NULL,
         	"mobile" varchar(10) NOT NULL,
-        	"location_lng" varchar(255) NOT NULL,
-          "location_lat" varchar(255) NOT NULL,
+        	"location" varchar(255) NOT NULL,
         	CONSTRAINT customers_pk PRIMARY KEY ("id")
         ) `,callback);
       },
