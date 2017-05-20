@@ -1,7 +1,7 @@
 import React from 'react';
 import {Navbar,Glyphicon} from 'react-bootstrap';
 
-const NavView = () => {
+const NavView = ({onClick}) => {
   return (
     <Navbar>
       <Navbar.Header>
@@ -12,7 +12,7 @@ const NavView = () => {
       </Navbar.Header>
       <Navbar.Collapse>
         <Navbar.Text pullRight>
-          <Navbar.Link><Glyphicon glyph="log-in" /> تسجيل الدخول </Navbar.Link>
+          <Navbar.Link onClick={()=>onClick('Login')}><Glyphicon glyph="log-in" /> تسجيل الدخول </Navbar.Link>
         </Navbar.Text>
         <Navbar.Text pullRight>
           |
