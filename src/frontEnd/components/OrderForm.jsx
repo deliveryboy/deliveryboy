@@ -1,6 +1,6 @@
 import React from 'react';
 
-const OrderForm = () => {
+const OrderForm = ({selectedMeal,submitOrder}) => {
   return (
     <div className="container">
       <div className='row'>
@@ -9,7 +9,7 @@ const OrderForm = () => {
           <input type="text" className="form-control" placeholder="رقم الجوال" />
           <input type="text" className="form-control" placeholder="المكان" />
           <input type="number" className="form-control" placeholder="الكمية" />
-          <button className="btn btn-primary" type="submit">تأكيد</button>
+          <button className="btn btn-primary" type="submit" onClick={({})=>submitOrder({})}>تأكيد</button>
         </div>
       </div>
     </div>
