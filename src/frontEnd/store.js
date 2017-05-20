@@ -9,7 +9,8 @@ const allReducers = combineReducers(
     currentDeliverboy:currentDeliverboy,
     ordersList:ordersList,
     meals:meals,
-    deliverboyList:deliverboyList
+    deliverboyList:deliverboyList,
+    restaurants:restaurants
 
   }
 );
