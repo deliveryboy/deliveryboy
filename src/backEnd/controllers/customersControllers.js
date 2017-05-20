@@ -12,6 +12,7 @@ module.exports = {
           res.status(500).end();
         }
         else {
+
           console.log(result);
           res.json(result);
         }

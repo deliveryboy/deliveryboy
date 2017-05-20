@@ -15,13 +15,37 @@ const insertrestaurant = (name, location,address,about, cb)=>{
   });
 };
 
+
 const selectrestaurantByName = (data,cb)=>{
+
   const sqlQuery = 'SELECT * FROM restaurants where name =$1';
   pool.connect((poolError,client, done) => {
     if(poolError){
       return cb(poolError);
     }
     pool.query(sqlQuery,[data.name],(err,result)=>{
+
+
+
+
+      const response = result.rowCount > 0
+        ? result.rows[0]
+        : null;
+      done(err);
+      return err
+        ? cb(err)
+        : cb(null, response);
+    });
+  });
+};
+const getAllRestaurant =(cb)=>{
+
+  const sqlQuery = 'SELECT * FROM restaurants';
+  pool.connect((poolError,client, done) => {
+    if(poolError){
+      return cb(poolError);
+    }
+    pool.query(sqlQuery,(err,result)=>{
       const response = result.rowCount > 0
         ? result.rows[0]
         : null;
@@ -54,5 +78,6 @@ const selectrestaurantByID = (id,cb)=>{
 module.exports ={
   insertrestaurant:insertrestaurant,
   selectrestaurantByName:selectrestaurantByName,
-  selectrestaurantByID:selectrestaurantByID
+  selectrestaurantByID:selectrestaurantByID,
+  getAllRestaurant:getAllRestaurant
 };
