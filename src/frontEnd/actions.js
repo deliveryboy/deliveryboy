@@ -5,6 +5,17 @@ const ChangeCurrentView = (currentView) => {
 };
 
 const getUser = (user) => {
+  if(user.includes('@delivery')){
+    user = user.substring(0, user.lastIndexOf("@"));
+    console.log(user);
+    getDelivery(user);
+  }
+  else if (user.includes('@restaurant')) {
+    user = user.substring(0, user.lastIndexOf("@"));
+    console.log(user);
+    getRestaurant(user);
+  }
+  else{
   fetch('/customers/'+user,{
       method:'GET',
       credentials:'include',
@@ -26,24 +37,48 @@ const getUser = (user) => {
       store.dispatch(ChangeCurrentView('FirstFace'));
     }
   });
-
+}
 
 };
+
+const rejectRestaurantOrder = ()=>{
+  //TODO
+}
+
+const rejectDeliveryOrder = ()=>{
+  //TODO
+}
+
+const confirmOrder = ()=>{
+  //TODO
+}
+
+const confirmDeliveryOrder = ()=>{
+  //TODO
+}
+
+
+const order = (order)=>{
+  //TODO
+}
 const getDelivery = (user)=>{
   fetchWrapper('/deliveryboy/'+user)
   .then((result)=>{
     if(result!=null){
       store.dispatch({type:'UPDATE_DELIVERYPROFILE',payload:result});
+      store.dispatch(ChangeCurrentView('DELIVERY_MAN_PAGE'));
     }
   });
 };
 
 
 const getRestaurant = (restaurant)=>{
-  fetchWrapper('/'+restaurant)
+  fetchWrapper('/restaurants/'+restaurant)
   .then((result)=>{
     if(result!=null){
+      console.log('insiderestaurant');
       store.dispatch({type:'UPDATE_RESTAURANTPROFILE',payload:result});
+      store.dispatch(ChangeCurrentView('ORDER_LIST'));
     }
   });
 };
@@ -105,4 +140,18 @@ const fetchWrapper = (url, method, body) => {
 
 };
 
-export {ChangeCurrentView,getUser,getDelivery,getRestaurant,getDeliveryOrders,getRestaurantOrders,getMeals,getRestaurants};
+export {
+  ChangeCurrentView,
+  getUser,
+  getDelivery,
+  getRestaurant,
+  getDeliveryOrders,
+  getRestaurantOrders,
+  getMeals,
+  getRestaurants,
+  confirmOrder,
+  order,
+  confirmDeliveryOrder,
+  rejectDeliveryOrder,
+  rejectRestaurantOrder
+};
