@@ -1,10 +1,10 @@
 import React from 'react';
-import FirstFace from './FirstFace.jsx';
 import MapContainer from './containers/MapContainer.jsx';
 import PropTypes from 'prop-types';
 import Login from './containers/Login.js';
 import DeliveryManPage from './DeliveryManPage.jsx';
 import ResMenu from './ResturantMenu.jsx';
+import FirstFace from './FirstFace.jsx'
 
 
 class App extends React.Component {
@@ -29,8 +29,7 @@ class App extends React.Component {
   render(){
 
     const {meals,currentView,restaurants} = this.props;
-    console.log(currentView);
-    switch (currentView) {
+  switch (currentView) {
     case 'FirstFace':
       return <FirstFace meals={meals} restaurants={restaurants}/>
     case  'LOGIN':
