@@ -32,9 +32,26 @@ const selectcustomersByName = (data,cb)=>{
     });
   });
 };
-
+const selectcustomersByID = (id,cb)=>{
+  const sqlQuery = 'SELECT * FROM customers where id = $1';
+  pool.connect((poolError,client, done) => {
+    if(poolError){
+      return cb(poolError);
+    }
+    pool.query(sqlQuery,[id],(err,result)=>{
+      const response = result.rowCount > 0
+        ? result.rows[0]
+        : null;
+      done(err);
+      return err
+        ? cb(err)
+        : cb(null, response);
+    });
+  });
+};
 
 module.exports ={
   insertcustomers:insertcustomers,
-  selectcustomersByName:selectcustomersByName
+  selectcustomersByName:selectcustomersByName,
+  selectcustomersByID:selectcustomersByID
 };
