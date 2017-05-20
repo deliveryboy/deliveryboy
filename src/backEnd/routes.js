@@ -10,4 +10,7 @@ module.exports = router
 .get('/restaurants/:name',restaurantsControllers.getRestaurants)
 .get('/deliveryboy',deliveryBoyControllers.getdeliveryboyPage)
 .get('/deliveryboy/:name',deliveryBoyControllers.getdeliveryboy)
-.get('/insertOrder',ordersControllers.addOrder);
+.get('/insertOrder',ordersControllers.addOrder)
+.get('/getOrder',ordersControllers.getOrder)
+.get('/getRestaurantOrder',restaurantsControllers.getRestaurantOrder)
+.get('/getDeliveryboyOrder',deliveryBoyControllers.getDeliveryboyOrder);
