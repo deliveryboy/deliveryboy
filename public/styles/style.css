@@ -123,6 +123,7 @@ th {
   border-radius: 4px;
   margin-top: 15px;
   color: #1C2021;
+  text-align: right;
 }
 
 .card:hover {
@@ -189,14 +190,29 @@ th {
   width: 20%;
   font-size: 18px;
 }
-.order-form{
+
+.order-form {
   display: flex;
   justify-content: space-around;
 }
-.map{
+
+.map {
   margin-top: 5%;
   width: 100%;
 }
-.map div{
+
+.map div {
   margin-top: 0!important;
+}
+
+.left-border {
+  border-left: 1px solid #ccc;
+}
+
+@media (max-width:991px) {
+  .left-border {
+    margin-top: 20px;
+    border-top: 1px solid #ccc;
+    border-left: 0;
+  }
 }

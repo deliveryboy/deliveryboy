@@ -1,64 +1,40 @@
-import React from 'react';
-import reactDOM from 'react-dom';
+import React, { Component } from 'react';
+import GoogleMapReact from 'google-map-react';
+import getLocation from '../mapUtils.js';
 
-class Map extends React.Component {
+const DeliveryIcon = () => <div><img src='/img/marker.webp' style={{width:'20px', height:'30px'}} /></div>;
+const RestaurantIcon = () => <div><img src='/img/rest.png' style={{width:'20px', height:'30px'}} /></div>;
+const CustomerIcon = () => <div><img src='/img/customer.png' style={{width:'20px', height:'30px'}} /></div>;
+
+class Map extends Component {
   constructor(props){
     super(props);
-    this.state = {
-      currentLocation: {
-        lat: null,
-        lng: null
-      }
-    };
+    this.state = {location : {}};
   }
-  componentDidMount() {
-    if (this.props.google.hasOwnProperty('maps')) {
-      if (navigator && navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition((pos) => {
-          const coords = pos.coords;
-          this.setState({
-            currentLocation: {
-              lat: coords.latitude,
-              lng: coords.longitude
-            }
-          });
-          this.loadMap();
-        });
-      }
-    }
+  componentDidMount(){
+    getLocation((location) =>{
+      this.setState({location : location});
+    });
   }
-
-  loadMap() {
-    if (this.props && this.props.google) {  // google is available
-      const {google} = this.props;
-      const maps = google.maps;
-
-      const mapRef = this.refs.map;
-      const node = reactDOM.findDOMNode(mapRef);
-
-      let zoom = 16;
-      let lat = this.state.currentLocation.lat;
-      let lng = this.state.currentLocation.lng;
-      const center = new maps.LatLng(lat, lng);
-      const mapConfig = Object.assign({}, {
-        center: center,
-        zoom: zoom
-      });
-      this.map = new maps.Map(node, mapConfig);
-    }
-  }
-
   render() {
-    const style = {
-      width: '80%',
-      height: '100%',
-      margin: '0 auto',
-      marginTop: '20px'
-    };
-    return(
-      <div ref='map'  style ={style}>
-        تحميل الخريطة ...
-      </div>
+    return (
+      <div style={{width:'80%', height:'400px', margin:'0 auto', marginTop:'20px'}}><GoogleMapReact
+        defaultCenter={{lat: 31.512688099999995, lng: 34.4451603}}
+        defaultZoom={15}
+      >
+        <DeliveryIcon
+          lat={31.512688099999995}
+          lng={34.4451603}
+        />
+        <RestaurantIcon
+          lat={31.5182062}
+          lng={34.4451603}
+        />
+      <CustomerIcon
+          lat={31.518206212312}
+          lng={34.4451603}
+        />
+      </GoogleMapReact></div>
     );
   }
 }

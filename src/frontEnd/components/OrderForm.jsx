@@ -6,6 +6,7 @@ const OrderForm = () => {
     <div className="container">
       <div className='row order-form'>
         <div className="order-form-group">
+          <h4>معلومات الطلب</h4>
           <input type="text" className="form-control" placeholder="الإسم كامل" autoFocus/>
           <input type="text" className="form-control" placeholder="رقم الجوال" />
           <input type="text" className="form-control" placeholder="المكان" />

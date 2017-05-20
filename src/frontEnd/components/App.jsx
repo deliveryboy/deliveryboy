@@ -5,13 +5,11 @@ import PropTypes from 'prop-types';
 import Login from './containers/Login.js';
 import DeliveryMan from './DeliveryMan.jsx';
 import ResMenu from './ResturantMenu.jsx';
-
+import OrderForm from './OrderForm.jsx'
 
 class App extends React.Component {
   constructor(props) {
     super(props);
-
-
   }
 
   componentWillMount(){
@@ -19,17 +17,9 @@ class App extends React.Component {
    this.props.getMeals();
   }
 
-  componentDidMount(){
-
-  }
-
-
-
-
   render(){
 
     const {meals,currentView,restaurants} = this.props;
-    console.log(currentView);
     switch (currentView) {
     case 'MAP':
       return <MapContainer />;
@@ -38,11 +28,11 @@ class App extends React.Component {
     case 'DELIVERY_MAN':
       return <DeliveryMan />;
     case  'LOGIN':
-      return <Login/>
+      return <Login/>;
     case 'RESTURANT_MENU':
       return <ResMenu />;
     default:
-      return <Login />;
+      return <Login/>;
     }
   }
 }
@@ -53,6 +43,6 @@ App.propType = {
   getRestaurants:PropTypes.func,
   getMeals:PropTypes.func,
   currentView:PropTypes.string
-}
+};
 
 export default App;

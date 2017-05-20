@@ -7,11 +7,11 @@ import PropTypes from 'prop-types';
 const Search = ({restaurants,meals}) => {
   return (
     <section className='row'>
-      <div className="col-md-6">
+      <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6 right-border" style={{textAlign:'center'}}>
         <h4>المطاعم</h4>
         <Resturants restaurants={restaurants}/>
       </div>
-      <div className="col-md-6">
+      <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6 left-border" style={{textAlign:'center'}}>
         <h4>الوجبات</h4>
         <Meals meals={meals} />
       </div>
@@ -22,6 +22,6 @@ const Search = ({restaurants,meals}) => {
 Search.propType = {
   meals:PropTypes.array,
   restaurants:PropTypes.array
-}
+};
 
 export default Search;
