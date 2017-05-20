@@ -7,7 +7,6 @@ module.exports = {
           res.status(500).end();
         }
         else {
-          console.log(result);
           //res.json(result);
           res.sendFile(path.join(__dirname+'/../../../public/user.html'));
         }

@@ -1,15 +1,15 @@
-const customersdb = require('../../database/customers.js');
+const restaurantdb = require('../../database/restaurant.js');
 
 module.exports = {
   getRestaurants: (req, res) => {
-    customersdb.selectrestaurantByName('zad',(err,result)=>{
+    restaurantdb.getAllRestaurant((err,result)=>{
       if (err) {
-          res.status(500).end();
-        }
-        else {
-          console.log(result);
-          res.json(result);
-        }
+        res.status(500).end();
+      }
+      else {
+        console.log(result);
+        res.json(result);
+      }
     });
   }
-};
+    };
