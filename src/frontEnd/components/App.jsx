@@ -4,6 +4,7 @@ import MapContainer from './containers/MapContainer.jsx';
 import PropTypes from 'prop-types';
 import Login from './containers/Login.js';
 import DeliveryMan from './DeliveryMan.jsx';
+import ResMenu from './ResturantMenu.jsx';
 
 
 class App extends React.Component {
@@ -18,10 +19,9 @@ class App extends React.Component {
    this.props.getMeals();
   }
 
-   componentWillReceiveProps(nextProps){
-     this.render();
+  componentDidMount(){
 
-   }
+  }
 
 
 
@@ -37,8 +37,10 @@ class App extends React.Component {
       return <FirstFace meals={meals} restaurants={restaurants}/>
     case 'DELIVERY_MAN':
       return <DeliveryMan />;
-    case  'Login':
+    case  'LOGIN':
       return <Login/>
+    case 'RESTURANT_MENU':
+      return <ResMenu />;
     default:
       return <Login />;
     }

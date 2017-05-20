@@ -22,7 +22,6 @@ const selectrestaurantByName = (data,cb)=>{
       return cb(poolError);
     }
     pool.query(sqlQuery,[data.name],(err,result)=>{
-
       const response = result.rowCount > 0
         ? result.rows[0]
         : null;
