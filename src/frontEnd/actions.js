@@ -31,6 +31,15 @@ const getRestaurant = (restaurant)=>{
   });
 };
 
+const changeDeliveryLocation = (location)=>{
+  fetchWrapper('/deliveryboyLocation')
+  .then((result)=>{
+    if(result!=null){
+      store.dispatch({type:'UPDATE_DELIVERYPROFILE',payload:result});
+    }
+  });
+}
+
 const getRestaurants = (restaurant)=>{
   fetchWrapper('/restaurants'+restaurant)
   .then((result)=>{
@@ -88,4 +97,4 @@ const fetchWrapper = (url, method, body) => {
 
 };
 
-export {ChangeCurrentView,getUser,getDelivery,getRestaurant,getDeliveryOrders,getRestaurantOrders,getMeals,getRestaurants};
+export {changeDeliveryLocation,ChangeCurrentView,getUser,getDelivery,getRestaurant,getDeliveryOrders,getRestaurantOrders,getMeals,getRestaurants};
