@@ -1,7 +1,7 @@
 import React from 'react';
 import {Table} from 'react-bootstrap';
 
-const OrderList = () => {
+const OrderList = ({ordersList}) => {
   return (
     <div className="table-container">
       <Table striped bordered condensed hover >
@@ -14,12 +14,18 @@ const OrderList = () => {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>محمد</td>
-            <td>غزة</td>
-            <td>طابون</td>
-          </tr>
+          {ordersList.map(function(order){
+            return(
+              <tr key={1}>
+                <td>1</td>
+                <td>محمد</td>
+                <td>غزة</td>
+                <td>طابون</td>
+                <button>تأكيد الطلب</button>
+              </tr>
+            )
+          })}
+
         </tbody>
       </Table>
     </div>
