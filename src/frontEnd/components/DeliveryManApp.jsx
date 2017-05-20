@@ -12,10 +12,10 @@ class DeliveryManApp extends React.Component {
 }
   render(){
 
-    const {deliveryboyInfo,currentView,ordersList} = this.props;
+    const {deliveryboyInfo,currentView,ordersList,confirmOrder,rejectRestaurantOrder} = this.props;
     switch (currentView) {
     case 'DELIVERY_MAN_PAGE':
-      return <DeliverManPage
+      return <DeliveryManPage
          ordersList={ordersList}
          confirmOrder={confirmOrder}
          rejectRestaurantOrder={rejectRestaurantOrder}
