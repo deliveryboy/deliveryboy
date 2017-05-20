@@ -1,17 +1,16 @@
 import React from 'react';
-import MapContainer from './containers/MapContainer.jsx';
 import PropTypes from 'prop-types';
 import Login from './containers/Login.js';
 import DeliveryManPage from './DeliveryManPage.jsx';
 import ResMenu from './ResturantMenu.jsx';
 import FirstFace from './FirstFace.jsx'
+import OrderForm from './OrderForm.jsx';
+import ResturantOrders from './ResturantOrders.jsx';
 
 
 class App extends React.Component {
   constructor(props) {
     super(props);
-
-
   }
 
   componentWillMount(){
@@ -19,23 +18,21 @@ class App extends React.Component {
    this.props.getMeals();
   }
 
-  componentDidMount(){
-
-  }
-
-
-
-
   render(){
-
-    const {meals,currentView,restaurants} = this.props;
-  switch (currentView) {
-    case 'FirstFace':
-      return <FirstFace meals={meals} restaurants={restaurants}/>
+    const {meals,currentView,restaurants,onClick} = this.props;
+    switch (currentView) {
+    case 'FIRST_FACE':
+      return <FirstFace meals={meals} restaurants={restaurants} onClick={onClick}/>;
+    case 'DELIVERY_MAN':
+      return <DeliveryMan />;
     case  'LOGIN':
-      return <Login/>
+      return <Login/>;
+    case 'RESTURANT_MENU':
+      return <ResMenu onClick={onClick} />;
+    case 'ORDER_FORM':
+      return <OrderForm />;
     default:
-      return <Login />;
+      return <Login/>;
     }
   }
 }
@@ -46,6 +43,6 @@ App.propType = {
   getRestaurants:PropTypes.func,
   getMeals:PropTypes.func,
   currentView:PropTypes.string
-}
+};
 
 export default App;

@@ -1,5 +1,4 @@
 import React from 'react';
-import MapContainer from './containers/MapContainer.jsx';
 import PropTypes from 'prop-types';
 import Login from './containers/Login.js';
 import DeliveryManPage from './DeliveryManPage.jsx';

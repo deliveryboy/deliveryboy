@@ -8,6 +8,7 @@ app.use(routes);
 app.use(express.static('public'));
 app.use(bodyParser.json());
 
+
 createTables( err => {
   if (err) throw err;
   app.listen(PORT, () => {

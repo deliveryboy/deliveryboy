@@ -56,6 +56,12 @@ th {
   border-bottom-left-radius: 4px;
 }
 
+.btn-group-justified {
+  display: inherit;
+  width: 100%;
+  border-collapse: separate;
+}
+
 .search-input-btn {
   display: flex;
   flex-direction: column;
@@ -123,6 +129,7 @@ th {
   border-radius: 4px;
   margin-top: 15px;
   color: #1C2021;
+  text-align: right;
 }
 
 .card:hover {
@@ -132,6 +139,7 @@ th {
 .card img {
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
+  width: 100%;
 }
 
 .card .card-block {
@@ -144,12 +152,13 @@ th {
 
 .table-container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   margin-top: 20px;
 }
 
 .table-container table {
-  width: 80%;
+  width: 60%;
 }
 
 .map-container {
@@ -178,14 +187,40 @@ th {
   align-items: center;
   flex-direction: column;
   margin-top: 5%;
+  width: 30%;
 }
 
 .order-form-group input {
   margin-bottom: 20px;
-  width: 40%;
 }
 
 .order-form-group button {
   width: 20%;
   font-size: 18px;
+}
+
+.order-form {
+  display: flex;
+  justify-content: space-around;
+}
+
+.map {
+  margin-top: 5%;
+  width: 100%;
+}
+
+.map div {
+  margin-top: 0!important;
+}
+
+.left-border {
+  border-left: 1px solid #ccc;
+}
+
+@media (max-width:991px) {
+  .left-border {
+    margin-top: 20px;
+    border-top: 1px solid #ccc;
+    border-left: 0;
+  }
 }

@@ -34,7 +34,7 @@ const getUser = (user) => {
   ).then((result) => {
     if (result != null) {
       store.dispatch({type: 'UPDATE_PROFILE', payload: result});
-      store.dispatch(ChangeCurrentView('FirstFace'));
+      store.dispatch(ChangeCurrentView('FIRST_FACE'));
     }
   });
 }
@@ -94,6 +94,16 @@ const getRestaurant = (restaurant)=>{
   });
 };
 
+const changeDeliveryLocation = (location)=>{
+  fetchWrapper('/deliveryboyLocation')
+  .then((result)=>{
+    if(result!=null){
+      store.dispatch({type:'UPDATE_DELIVERYPROFILE',payload:result});
+    }
+  });
+};
+
+
 const getRestaurants = ()=>{
   fetchWrapper('/restaurants')
   .then((result)=>{
@@ -151,6 +161,7 @@ const fetchWrapper = (url, method, body) => {
 
 };
 
+
 export {
   ChangeCurrentView,
   getUser,
@@ -161,7 +172,6 @@ export {
   getMeals,
   getRestaurants,
   confirmOrder,
-  order,
   confirmDeliveryOrder,
   rejectDeliveryOrder,
   rejectRestaurantOrder,

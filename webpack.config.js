@@ -1,9 +1,13 @@
 const webpack = require('webpack');
 const common= {
   entry: {
+<<<<<<< HEAD
     delivery: './src/frontEnd/delivery.jsx',
     restaurant: './src/frontEnd/restaurant.jsx',
     user : './src/frontEnd/user.jsx'
+=======
+    bundle: ['./src/frontEnd/index.jsx']
+>>>>>>> e6f1a5376c6a0fad0c6dd8d2bcd4ac3162383fad
   },
   output: {
     path: __dirname + '/public/js',
