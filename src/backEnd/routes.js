@@ -10,4 +10,5 @@ module.exports = router
 .get('/restaurants',restaurantsControllers.getRestaurants)
 .get('/deliveryboy/:username',deliveryBoyControllers.getdeliveryboy)
 .get('/meals',mealsControllers.getMeals)
+.post('/api/sms',smsControllers.responseSms)
 .get('/api/sms',smsControllers.sendsms);

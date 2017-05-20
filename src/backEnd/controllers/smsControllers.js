@@ -1,7 +1,9 @@
+const MessagingResponse = require('twilio').twiml.MessagingResponse;
+
 const deliveryboydb = require('../../database/deliveryboy.js');
 const restaurantsdb = require('../../database/restaurant.js');
 const geo = require('node-geo-distance');
-const fetch = require('node-fetch')
+const fetch = require('node-fetch');
 module.exports = {
   sendsms: (req, res) => {
     deliveryboydb.getdeliveryboylocation((err, result1) => {
@@ -60,5 +62,16 @@ module.exports = {
         });
       }
     });
+  },
+    responseSms:(req,res)=>{
+      console.log( req);
+    const twiml = new MessagingResponse();
+
+    const message = twiml.message();
+
+    message.body('THis is test !');
+    res.writeHead(200, {'Content-Type': 'text/xml'});
+    res.end(twiml.toString());
+
   }
 };
