@@ -1,5 +1,6 @@
 const restaurantdb = require('../../database/restaurant.js');
 const path = require('path');
+const orderdb = require('../../database/order.js');
 
 module.exports = {
   getRestaurantsPage:(req,res)=>{
@@ -8,12 +9,26 @@ module.exports = {
   getRestaurants: (req, res) => {
     restaurantdb.selectrestaurantByName(req.params,(err,result)=>{
       if (err) {
-          res.status(500).end();
-        }
-        else {
-          console.log(result);
-          res.json(result);
-        }
+        res.status(500).end();
+      }
+      else {
+        res.json(result);
+      }
     });
+  },
+  getRestaurantOrder: (req, res) => {
+    orderdb.selectOrderBYRestStatus('pending',(err,pendingOrders)=>{
+      console.log(pendingOrders);
+      res.json(pendingOrders);
+    });
+  //  if()
+    // orderdb.selectOrderBYID(1,(err,OrderStatus)=>{
+    //   const OrderRestStatus = OrderStatus.body[0];
+    //   const OrderDeliverytStatus= OrderStatus.body[0];
+    //   if(OrderRestStatus == 'pending' && OrderDeliverytStatus == 'pending'){
+    // }else {
+    //   orderdb.updateOrderRestStatus()
+    // }
+    // })
   }
 };
