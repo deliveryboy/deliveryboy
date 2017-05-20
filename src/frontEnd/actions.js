@@ -62,7 +62,7 @@ const order = (order)=>{
   //TODO
 }
 const getDelivery = (user)=>{
-  fetchWrapper('/deliveryboy/'+user)
+  fetchWrapper('/deliveryboys/'+user)
   .then((result)=>{
     if(result!=null){
       store.dispatch({type:'UPDATE_DELIVERYPROFILE',payload:result});
