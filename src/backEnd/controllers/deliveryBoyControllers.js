@@ -23,7 +23,6 @@ module.exports = {
   getDeliveryboyOrder: (req, res) => {
     ///selectresstatus if status == accept
     orderdb.selectOrderBYDeliverytStatus('pending',(err,pendingOrders)=>{
-      console.log(pendingOrders);
       res.json(pendingOrders);
     });
   }
