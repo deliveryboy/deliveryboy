@@ -1,12 +1,12 @@
 const pool = require('./pool.js');
 
-const insertOrder = (order_price,order_amount,order_status,time_start,time_end, cb)=>{
-  const sqlQuery = 'INSERT INTO orders (order_price,order_amount,order_status,time_start,time_end)VALUES($1,$2,$3,$4,$5) RETURNING *';
+const insertOrder = (order_price,order_amount,order_rest_status,order_deliveryboy_status,time_start,time_end, cb)=>{
+  const sqlQuery = 'INSERT INTO orders (order_price,order_amount,order_rest_status,order_deliveryboy_status,time_start,time_end)VALUES($1,$2,$3,$4,$5,$6) RETURNING *';
   pool.connect((poolError,client, done) => {
     if(poolError){
       return cb(poolError);
     }
-    pool.query(sqlQuery,[order_price,order_amount,order_status,time_start,time_end],(err,result)=>{
+    pool.query(sqlQuery,[order_price,order_amount,order_rest_status,order_deliveryboy_status,time_start,time_end],(err,result)=>{
       // done(err);
       // return err
       //   ? cb(err)
@@ -39,12 +39,12 @@ const selectOrderByID = (id,cb)=>{
 };
 
 const selectOrderBYRestStatus = (restaurantStatus,cb)=>{
-  const sqlQuery = 'SELECT * FROM orders where order_RestStatus =$1';
+  const sqlQuery = 'SELECT * FROM orders where order_rest_status =$1';
   pool.connect((poolError,client, done) => {
     if(poolError){
       return cb(poolError);
     }
-    pool.query(sqlQuery,(err,[restaurantStatus],result)=>{
+    pool.query(sqlQuery,[restaurantStatus],(err,result)=>{
       const response = result.rowCount > 0
         ? result.rows[0]
         : null;
@@ -57,12 +57,12 @@ const selectOrderBYRestStatus = (restaurantStatus,cb)=>{
 };
 
 const selectOrderBYDeliverytStatus = (deliveryStatus,cb)=>{
-  const sqlQuery = 'SELECT * FROM orders where order_deliveryboyStatus =$1';
+  const sqlQuery = 'SELECT * FROM orders where order_deliveryboy_status =$1';
   pool.connect((poolError,client, done) => {
     if(poolError){
       return cb(poolError);
     }
-    pool.query(sqlQuery,(err,[deliveryStatus],result)=>{
+    pool.query(sqlQuery,[deliveryStatus],(err,result)=>{
       const response = result.rowCount > 0
         ? result.rows[0]
         : null;
