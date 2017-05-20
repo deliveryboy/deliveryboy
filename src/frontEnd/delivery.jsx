@@ -2,7 +2,7 @@ import React from 'react';
 import reactDOM from 'react-dom';
 import {Provider} from 'react-redux';
 import store from './store.js';
-import App from './components/containers/App.js';
+import DeliveryManApp from './components/containers/DeliveryManApp.jsx';
 import Navbar from './components//containers/Navbar.js';
 
 const Main = () => {
@@ -10,7 +10,7 @@ const Main = () => {
   <Provider store={store}>
     <div>
       <Navbar/>
-      <App/>
+      <DeliveryManApp/>
     </div>
   </Provider>
   );
