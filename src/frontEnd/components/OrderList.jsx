@@ -1,7 +1,7 @@
 import React from 'react';
 import {Table} from 'react-bootstrap';
 
-const OrderList = ({ordersList}) => {
+const OrderList = ({ordersList,onClick}) => {
   return (
     <div className="table-container">
       <Table striped bordered condensed hover >
@@ -21,7 +21,7 @@ const OrderList = ({ordersList}) => {
                 <td>محمد</td>
                 <td>غزة</td>
                 <td>طابون</td>
-                <button>تأكيد الطلب</button>
+                <button onClick={({})=>order({})}>تأكيد الطلب</button>
               </tr>
             )
           })}
