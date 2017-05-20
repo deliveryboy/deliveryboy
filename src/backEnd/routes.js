@@ -18,5 +18,5 @@ module.exports = router
 .get('/deliveryboy',deliveryBoyControllers.getdeliveryboyPage)
 .get('/getOrder',ordersControllers.getOrder)
 .get('/getRestaurantOrder',restaurantsControllers.getRestaurantOrder)
-.get('/getDeliveryboyOrder',deliveryBoyControllers.getDeliveryboyOrder);
-// .get('/insertOrder',ordersControllers.addOrder);
+.get('/getDeliveryboyOrder',deliveryBoyControllers.getDeliveryboyOrder)
+ .get('/insertOrder',ordersControllers.addOrder);
