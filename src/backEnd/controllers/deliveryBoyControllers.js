@@ -14,5 +14,10 @@ module.exports = {
         res.json(result);
       }
     });
+  },
+  updateDeliveryBoyLocation:(req,res) =>{
+    deliveryboydb.updateLocationById(req.params,req.body,(err,result)=>{
+
+    })
   }
 };

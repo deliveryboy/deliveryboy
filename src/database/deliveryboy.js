@@ -50,9 +50,28 @@ const selectdeliveryboyByusername = (data,cb)=>{
     });
   });
 };
+const updateLocationById = (data,cb)=>{
+  const sqlQuery = 'UPDATE delivery_person SET location=$1 WHERE id =$2 RETURNING location';
+  console.log(sqlQuery);
+  pool.connect((poolError,client, done) => {
+    if(poolError){
+      return cb(poolError);
+    }
+    pool.query(sqlQuery,[data.id,'1'],(err,result)=>{
+      const response = result.rowCount > 0
+        ? result.rows[0]
+        : null;
+      done(err);
+      return err
+        ? cb(err)
+        : cb(null, response);
+    });
+  });
+};
 
 module.exports ={
   insertdeliveryboy:insertdeliveryboy,
   selectdeliveryboyByusername:selectdeliveryboyByusername,
-  selectdeliveryboyBylocation:selectdeliveryboyBylocation
+  selectdeliveryboyBylocation:selectdeliveryboyBylocation,
+  updateLocationById:updateLocationById
 };

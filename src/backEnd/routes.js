@@ -6,4 +6,6 @@ module.exports = router
 .get('/', customersControllers.getHomePage)
 .get('/customers/:name', customersControllers.getCustomers)
 .get('/restaurants',restaurantsControllers.getRestaurants)
-.get('/deliveryboy/:name',deliveryBoyControllers.getdeliveryboy);
+.get('/deliveryboy/:name',deliveryBoyControllers.getdeliveryboy)
+.get('/deliveryboy/:id',deliveryBoyControllers.updateDeliveryBoyLocation)
+;
