@@ -8,7 +8,7 @@ export class Container extends Component {
   }
   render() {
     if (!this.props.loaded) {
-      return <div> Loading </div>;
+      return <div> تحميل الخريطة ... </div>;
     }
     return (
       <Map google={this.props.google}></Map>

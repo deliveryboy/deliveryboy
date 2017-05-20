@@ -5,6 +5,9 @@ const deliveryBoyControllers = require('./controllers/deliveryBoyControllers.js'
 const mealsControllers = require('./controllers/mealsControllers.js');
 const ordersControllers = require('./controllers/ordersControllers.js');
 const smsControllers = require('./controllers/smsControllers.js');
+
+// const ordersControllers = require('./controllers/ordersControllers.js');
+
 module.exports = router
 .get('/restaurants',restaurantsControllers.getRestaurants)
 .get('/restaurant',restaurantsControllers.getRestaurantsPage)
@@ -21,3 +24,4 @@ module.exports = router
 .get('/getRestaurantOrder',restaurantsControllers.getRestaurantOrder)
 .get('/getDeliveryboyOrder',deliveryBoyControllers.getDeliveryboyOrder)
  .get('/insertOrder',ordersControllers.addOrder);
+// .get('/insertOrder',ordersControllers.addOrder);
