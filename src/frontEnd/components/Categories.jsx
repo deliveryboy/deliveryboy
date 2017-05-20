@@ -4,16 +4,16 @@ import Meals from './Meals.jsx';
 import PropTypes from 'prop-types';
 
 
-const Search = ({restaurants,meals}) => {
+const Search = ({restaurants,meals, onClick}) => {
   return (
     <section className='row'>
       <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6 right-border" style={{textAlign:'center'}}>
         <h4>المطاعم</h4>
-        <Resturants restaurants={restaurants}/>
+        <Resturants restaurants={restaurants} onClick={onClick}/>
       </div>
       <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6 left-border" style={{textAlign:'center'}}>
         <h4>الوجبات</h4>
-        <Meals meals={meals} />
+        <Meals meals={meals} onClick={onClick} />
       </div>
     </section>
   );

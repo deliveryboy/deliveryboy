@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Meals = ({meals}) => {
+const Meals = ({meals, onClick}) => {
   return (
     <div className='row'>
       {/*{restaurants.map(function(restaurant) { */}
@@ -13,10 +13,7 @@ const Meals = ({meals}) => {
                 <h4 className="card-title">بيتزا</h4>
                 <p className="card-text">التقييم: 5</p>
                 <p className="card-text">السعر: 12 شيكل</p>
-                <div className="btn-group btn-group-justified">
-                  <a href="#" className="btn btn-primary">إضافة إلى السلة</a>
-                  <a href="#" className="btn btn-success">طلب الآن</a>
-                </div>
+                <a className="btn btn-success">اطلب الآن</a>
               </div>
             </div>
           </div>
@@ -27,10 +24,7 @@ const Meals = ({meals}) => {
                 <h4 className="card-title">بيتزا</h4>
                 <p className="card-text">التقييم: 5</p>
                 <p className="card-text">السعر: 12 شيكل</p>
-                <div className="btn-group btn-group-justified">
-                  <a href="#" className="btn btn-primary">إضافة إلى السلة</a>
-                  <a href="#" className="btn btn-success">طلب الآن</a>
-                </div>
+                <a className="btn btn-success">اطلب الآن</a>
               </div>
             </div>
           </div>

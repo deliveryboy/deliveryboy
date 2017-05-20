@@ -4,12 +4,12 @@ import Categories from './Categories.jsx';
 import PropTypes from 'prop-types';
 
 
-const FirstFace = ({meals,restaurants}) =>{
+const FirstFace = ({meals,restaurants, onClick}) =>{
   return(
     <div className='container'>
       <Search />
       <hr />
-      <Categories meals={meals} restaurants={restaurants} />
+      <Categories meals={meals} restaurants={restaurants} onClick={onClick}/>
     </div>
   );
 };
