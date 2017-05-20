@@ -49,8 +49,7 @@ module.exports = (cb) => {
         	"name" varchar(50) NOT NULL,
           "username" varchar(50) NOT NULL UNIQUE,
         	"mobile" varchar(10) NOT NULL UNIQUE,
-        	"location_lng" varchar(255) NOT NULL,
-          "location_lat" varchar(255) NOT NULL,
+        	"location" varchar(255) NOT NULL,
         	"identification" varchar(20) NOT NULL,
         	CONSTRAINT delivery_person_pk PRIMARY KEY ("id")
         ) `,callback);
