@@ -11,10 +11,9 @@ module.exports ={
   addOrder:(req,res)=>{
     const start_time ='Sat May 20 2017 08:30:00 (IDT)';
     const end_time = 'Sat May 20 2017 09:30:00 (IDT)';
-    orderdb.insertOrder(20,2,Orderstatus.beforeResReply,start_time,end_time,(err,result)=>{
-      console.log(result);
-      res.json(result);
-    })
+    orderdb.insertOrder(20,2,Orderstatus.beforeResReply,'pending',start_time,end_time,(err,result)=>{
+        res.json(result);
+    });
   },
   getOrder:(req,res)=>{
       // restaurantdb.selectrestaurantByID(1,(err,restaurantData)=>{
