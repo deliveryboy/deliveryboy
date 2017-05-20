@@ -17,7 +17,6 @@ module.exports = {
   },
   getRestaurantOrder: (req, res) => {
     orderdb.selectOrderBYRestStatus('pending',(err,pendingOrders)=>{
-      console.log(pendingOrders);
       res.json(pendingOrders);
     });
   //  if()
